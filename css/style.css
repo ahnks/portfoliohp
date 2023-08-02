@@ -41,11 +41,6 @@ a {
     color: inherit;
 }
 
-/* 깃, 홈페이지 아이콘 호버시 색상변경 */
-h2 a:hover {
-    color: gray;
-}
-
 /* description tool tag */
 .tag-html {
     background-color: dodgerblue;
@@ -77,15 +72,13 @@ h2 a:hover {
 
 /* 격자무늬 배경 */
 .intro,
+.about,
 .clone,
 .graphic {
     background-color: white;
     background-image: linear-gradient(gainsboro 1px, transparent 1px), linear-gradient(to right, gainsboro 1px, white 1px);
     background-size: 40px 40px;
 }
-
-
-
 
 /* 개별 배경색 */
 #sec01 {
@@ -133,18 +126,12 @@ h2 a:hover {
     color: white;
 }
 
-/* .web .title,
-.clone .title,
-.graphic .title {
-    margin-bottom: 80px;
-} */
-
 /* 상단메뉴 */
 nav {
     position: fixed;
     width: 100vw;
     padding-right: 15px;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.6);
     background-color: rgba(0, 0, 0, 0.1);
     z-index: 5;
 }
@@ -209,15 +196,18 @@ nav .main li:hover {
 .profile {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: top;
 }
 
-.profile span{
+.profile span {
     font-family: 'LINESeedKR-Bd';
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+}
+.prof_text a:hover{
+text-decoration: underline;
 }
 
-.skill_container   {
+.skill_container {
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -225,8 +215,8 @@ nav .main li:hover {
     gap: 30px;
 }
 
-.skill_container p{
-    color: hotpink;
+.skill_container p {
+    color: rgb(255, 0, 128);
     text-align: center;
 }
 
@@ -235,7 +225,7 @@ nav .main li:hover {
     margin-top: 5vh;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .mockup {
@@ -247,17 +237,37 @@ nav .main li:hover {
     width: 500px;
     padding: 50px;
     font-size: 1.2rem;
-    background-color: whitesmoke;
+    background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.design_text h2{
+
+.design_text h2 {
     font-family: 'LINESeedKR-Bd';
 }
+
 .design_text p {
     margin: 20px auto;
 }
 
+.button {
+    font-family: 'LINESeedKR-Bd';
+    display: inline-block;
+    border: 1px solid gray;
+    background-color: white;
+    font-size: 22px;
+    text-align: center;
+    padding: 0 22px 0 15px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+}
 
+.button i{font-size: 28px;}
+
+.button:hover{
+    background-color: dimgray;
+    color: white;
+}
 /* 클론코딩 */
 
 .container {
@@ -289,6 +299,8 @@ nav .main li:hover {
     justify-content: center;
     align-items: center;
 }
+.clone_text a{font-size: 24px;}
+.clone_text a:hover{color: gray;}
 
 /* 그래픽 디자인 */
 
