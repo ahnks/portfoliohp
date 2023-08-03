@@ -161,6 +161,7 @@ nav .main li:hover {
 
 .intro .title {
     background: linear-gradient(45deg, black, transparent);
+    background-clip: text;
     -webkit-background-clip: text;
     color: rgba(0, 0, 0, 0.05);
     font-size: 6rem;
@@ -170,10 +171,10 @@ nav .main li:hover {
     position: absolute;
     left: calc(50% - 48px);
     bottom: 0;
-    animation: arrowdown 1s infinite;
+    animation: arrow-down 1s infinite;
 }
 
-@keyframes arrowdown {
+@keyframes arrow-down {
     0% {
         transform: translateY(-10px);
     }
@@ -203,6 +204,7 @@ nav .main li:hover {
     font-family: 'LINESeedKR-Bd';
     font-size: 1.5rem;
 }
+.prof_text{font-size: 1.2rem;}
 .prof_text a:hover{
 text-decoration: underline;
 }
