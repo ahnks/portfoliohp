@@ -12,14 +12,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'LINESeedKR-Th';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Th.woff2') format('woff2');
-    font-style: normal;
-}
-
-
-
 /* reset */
 * {
     margin: 0;
@@ -204,9 +196,13 @@ nav .main li:hover {
     font-family: 'LINESeedKR-Bd';
     font-size: 1.5rem;
 }
-.prof_text{font-size: 1.2rem;}
-.prof_text a:hover{
-text-decoration: underline;
+
+.prof_text {
+    font-size: 1.2rem;
+}
+
+.prof_text a:hover {
+    text-decoration: underline;
 }
 
 .skill_container {
@@ -264,12 +260,15 @@ text-decoration: underline;
     margin-top: 20px;
 }
 
-.button i{font-size: 28px;}
+.button i {
+    font-size: 28px;
+}
 
-.button:hover{
+.button:hover {
     background-color: dimgray;
     color: white;
 }
+
 /* 클론코딩 */
 
 .container {
@@ -301,14 +300,93 @@ text-decoration: underline;
     justify-content: center;
     align-items: center;
 }
-.clone_text a{font-size: 24px;}
-.clone_text a:hover{color: gray;}
+
+.clone_text a {
+    font-size: 24px;
+}
+
+.clone_text a:hover {
+    color: gray;
+}
 
 /* 그래픽 디자인 */
+.graphic .container{
+    grid-template-columns: repeat(3, 1fr);
+}
 
 /* 반응형 */
 
 
-@media screen and (max-width:1024px) {}
+@media screen and (max-width:1024px) {
+    .intro .title {
+        font-size: 4rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .profile span {
+        font-size: 1rem;
+    }
+
+    .prof_text {
+        font-size: 1rem;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .prof_img {
+        width: 50%;
+    }
+
+    .skill_container {
+        gap: 0;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        text-align: center;
+    }
+
+    /* 웹디자인 */
+    .mockup {
+        width: 350px;
+        z-index: 1;
+    }
+
+    .design_text {
+        width: 90%;
+        font-size: 1rem;
+        position: relative;
+        bottom: 5vh;
+        margin: 0 auto;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+
+    .button i {
+        font-size: 22px;
+    }
+
+    /* 클론코딩 */
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    /* 그래픽 디자인 */
+    .graphic .container{
+        grid-template-columns: repeat(3, 1fr);
+    
+    }
+
+}
 
 @media screen and (max-width:768px) {}
