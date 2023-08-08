@@ -64,9 +64,9 @@ a {
 
 /* 첫번째 타이틀 */
 
-#sec00 .title .char {
-}
+#sec00 .title .char {}
 
+/* 공통사항 */
 /* 격자무늬 배경 */
 .intro,
 .about,
@@ -76,6 +76,11 @@ a {
     background-color: white;
     background-image: linear-gradient(gainsboro 1px, transparent 1px), linear-gradient(to right, gainsboro 1px, white 1px);
     background-size: 40px 40px;
+}
+
+.intro,
+.contact {
+    padding-left: 3vw;
 }
 
 /* 개별 배경색 */
@@ -103,6 +108,7 @@ a {
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     padding: 5%;
+    border: 1px solid red;
 }
 
 .web .card,
@@ -158,7 +164,8 @@ nav .main li:hover {
     position: relative;
 }
 
-.intro .title {
+.intro .title,
+.contact .title {
     background: linear-gradient(45deg, black, transparent);
     background-clip: text;
     -webkit-background-clip: text;
@@ -226,8 +233,8 @@ nav .main li:hover {
 }
 
 /* 웹디자인 내용 */
-.content {
-    margin-top: 5vh;
+.design_content {
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,11 +286,11 @@ nav .main li:hover {
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     gap: 20px;
 }
 
 .item {
+    /* width: 100%; 있으나마나*/
     position: relative;
     overflow: hidden;
 }
@@ -315,15 +322,21 @@ nav .main li:hover {
 }
 
 /* 그래픽 디자인 */
-.graphic .container {
-    grid-template-columns: repeat(3, 1fr);
+swiper-container {
+    width: 100%;
+    height: 90%;
+    background-color: pink;
+    border: 1px solid;
 }
+
 
 /* 반응형 */
 
 
 @media screen and (max-width:1024px) {
-    .intro .title {
+
+    .intro .title,
+    .contact .title {
         font-size: 4rem;
     }
 
@@ -343,8 +356,9 @@ nav .main li:hover {
         font-size: 1rem;
     }
 
-    .content {
+    .design_content {
         flex-direction: column;
+        align-content: space-between;
     }
 
     .prof_img {
@@ -359,9 +373,6 @@ nav .main li:hover {
     }
 
     /* 웹디자인 */
-    .mockup {
-        z-index: 1;
-    }
 
     .design_text {
         width: 90%;
@@ -374,17 +385,10 @@ nav .main li:hover {
     /* 클론코딩 */
     .container {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
     }
+
     .clone_text {
         font-size: 1rem;
-    }
-
-
-    /* 그래픽 디자인 */
-    .graphic .container {
-        grid-template-columns: repeat(3, 1fr);
-
     }
 
 }
@@ -395,7 +399,7 @@ nav .main li:hover {
     }
 
     .mockup {
-        width: 60vw;
+        width: 80vw;
     }
 
     .design_text {
