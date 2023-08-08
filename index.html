@@ -4,22 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
     <link rel="stylesheet" type="text/css" href="css/fontello.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script lang="java">
         $(function () {
             $("#fullpage").fullpage({
                 navigation: true,
                 navigationPosition: "right",
-                anchors: ['intro', 'about', 'webd1', 'webd2', 'webd3', 'clone', 'graphic']
+                anchors: ['intro', 'about', 'webd1', 'webd2', 'webd3', 'clone', 'graphic', 'contact']
             })
+            Splitting()   
         })
     </script>
     <title>웹 디자이너 안경선 포트폴리오</title>
@@ -38,7 +40,7 @@
 
     <div id="fullpage">
         <div class="section intro" id="sec00">
-            <div class="title">
+            <div class="title" data-splitting>
                 웹 디자인 Web Design<br>
                 포트폴리오 Portfolio
             </div>
@@ -131,7 +133,6 @@
                 <div class="title">
                     <h2>웹 디자인</h2>Web Design
                 </div><!-- title -->
-                <br>
                 <div class="content">
                     <img src="img/design_dental.png" alt="design_dental" class="mockup">
                     <!-- !!!!!!!!!!!반응형 목업도 추가하기 -->
@@ -144,7 +145,7 @@
                         <span class="tag-ps">#PhotoShop</span>
                         <span class="tag-ai">#Illustrator</span><br>
                         <a href="https://github.com/ahnks/dental.github.io.git" target="_blank" class="button"><i
-                                class="icon-github-circled"></i>코드보기</a>&nbsp;&nbsp;&nbsp;
+                                class="icon-github-circled"></i>코드보기</a>
                         <a href="https://ahnks.github.io/dental.github.io/" target="_blank" class="button"><i
                                 class="icon-home-1"></i>방문하기</a>
                     </div><!-- design_text -->
@@ -157,7 +158,6 @@
                 <div class="title">
                     <h2>웹 디자인</h2>Web Design
                 </div><!-- title -->
-                <br>
                 <div class="content">
                     <img src="img/design_cleaning.png" alt="design_cleaning" class="mockup">
                     <div class="design_text">
@@ -171,7 +171,7 @@
                         <span class="tag-ps">#PhotoShop</span>
                         <span class="tag-ai">#Illustrator</span><br>
                         <a href="https://github.com/ahnks/laundry.github.io.git" target="_blank" class="button"><i
-                                class="icon-github-circled"></i>코드보기</a>&nbsp;&nbsp;&nbsp;
+                                class="icon-github-circled"></i>코드보기</a>
                         <a href="https://ahnks.github.io/laundry.github.io/" target="_blank" class="button"><i
                                 class="icon-home-1"></i>방문하기</a>
 
@@ -185,7 +185,6 @@
                 <div class="title">
                     <h2>웹 디자인</h2>Web Design
                 </div><!-- title -->
-                <br>
                 <div class="content">
                     <img src="img/design_festival.png" alt="design_festival" class="mockup">
                     <div class="design_text">
@@ -200,7 +199,7 @@
                         <span class="tag-ai">#Illustrator</span>
                         <span class="tag-pr">#Premiere</span><br>
                         <a href="https://github.com/ahnks/bakery.github.io.git" target="_blank" class="button"><i
-                                class="icon-github-circled"></i>코드보기</a>&nbsp;&nbsp;&nbsp;
+                                class="icon-github-circled"></i>코드보기</a>
                         <a href="https://ahnks.github.io/bakery.github.io/" target="_blank" class="button"><i
                                 class="icon-home-1"></i>방문하기</a>
 
@@ -230,7 +229,7 @@
                     <div class="item">
                         <img src="img/clone_daol.png" alt="clone_daol">
                         <div class="clone_text">
-                            다올 홈페이지&nbsp;
+                            다올&nbsp;
                             <a href="https://github.com/ahnks/cl_daol.github.io.git" target="_blank"><i
                                     class="icon-github-circled"></i></a>
                             <a href="https://ahnks.github.io/cl_daol.github.io/" target="_blank"><i
@@ -248,7 +247,7 @@
                     </div><!-- item -->
                     <div class="item">
                         <img src="img/clone_canon.png" alt="clone_canon">
-                        <div class="clone_text">캐논 홈페이지&nbsp;
+                        <div class="clone_text">캐논&nbsp;
                             <a href="https://github.com/ahnks/cl_canon.github.io.git" target="_blank"><i
                                     class="icon-github-circled"></i></a>
                             <a href="https://ahnks.github.io/cl_canon.github.io/" target="_blank"><i
@@ -257,7 +256,7 @@
                     </div><!-- item -->
                     <div class="item">
                         <img src="img/clone_coffine.png" alt="clone_coffine">
-                        <div class="clone_text">커핀그루나루 홈페이지&nbsp;
+                        <div class="clone_text">커핀그루나루&nbsp;
                             <a href="https://github.com/ahnks/cl_coffine.github.io.git" target="_blank"><i
                                     class="icon-github-circled"></i></a>
                             <a href="https://ahnks.github.io/cl_coffine.github.io/" target="_blank"><i
@@ -296,6 +295,16 @@
                 </div><!-- container -->
             </div><!-- card -->
         </div><!-- section  graphic -->
+
+        <div class="section contact" id="sec07">
+            <div class="card">
+                <div class="title">
+                    <h3>그래픽 디자인</h3>Graphic Design
+                </div><!-- title -->
+                마지막까지 읽어주셔서 감사합니다.
+                연락을 주실 경우, 010 6426 1290으로 전화 혹은 문자를 보내주세요.
+            </div>
+        </div>
     </div><!-- fullpage -->
 </body>
 
