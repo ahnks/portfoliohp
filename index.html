@@ -4,27 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
-    <link rel="stylesheet" type="text/css" href="css/fontello.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- 아이콘,폰트 -->
+    <link rel="stylesheet" type="text/css" href="css/fontello.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+    <!-- 스와이퍼 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!--  -->
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
     <script lang="java">
         $(function () {
-            $("#fullpage").fullpage({
-                navigation: true,
-                navigationPosition: "right",
-                anchors: ['intro', 'about', 'webd1', 'webd2', 'webd3', 'clone', 'graphic', 'contact']
-            })
             Splitting()
+            /* 스와이퍼 */
+            const swiper = new Swiper('.swiper', {
+                autoplay: true,
+                loop: true,
+                slidesPerView: 3,
+                centeredSlides: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true
+                },
+                navigation: {
+                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next'
+                }
+            })
+
         })
     </script>
     <title>웹 디자이너 안경선 포트폴리오</title>
@@ -33,271 +46,243 @@
 <body>
     <nav>
         <ul class="main">
-            <li data-menuanchor="intro"><a href="#intro">INTRO</a></li>
-            <li data-menuanchor="about"><a href="#about">ABOUT</a></li>
-            <li data-menuanchor="webd1"><a href="#webd1">WEB DESIGN</a></li>
-            <li data-menuanchor="clone"><a href="#clone">CLONE CODING</a></li>
-            <li data-menuanchor="graphic"><a href="#graphic">GRAPHIC DESIGN</a></li>
-            <li data-menuanchor="contact"><a href="#contact">CONTACT</a></li>
+            <li><a href="#intro">INTRO</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#web">WEB DESIGN</a></li>
+            <li><a href="#clone">CLONE CODING</a></li>
+            <li><a href="#graphic">GRAPHIC DESIGN</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul><!-- main -->
     </nav>
 
-    <div id="fullpage">
-        <div class="section intro" id="sec00">
+    <div id="wrap">
+        <div class="section" id="intro">
             <div class="title" data-splitting>
                 웹 디자인 Web Design<br>
                 포트폴리오 Portfolio
             </div>
             <div>
-                <a data-menuanchor="about" href="#about" class="arrow"><img src="img/arrow.png" alt="arrow"></a>
+                <a href="#about" class="arrow"><img src="img/arrow.png" alt="arrow"></a>
             </div>
         </div><!-- section intro -->
 
-        <div class="section about" id="sec01">
-            <div class="card">
-                <div class="title">
-                    <h2>
-                        신입 웹 디자이너 안경선을 소개합니다.
-                    </h2>About Me
-                </div><!-- title -->
-                <br><br>
-                <div class="profile">
-                    <div class="prof_img">
-                        <!-- <img src="img/profile.png" alt="profile" class="prof_img"> -->
-                    </div><!-- prof_img -->
-                    <div class="prof_text">
-                        <span style="font-size: 1.5rem;">안 경선</span>
-                        <p style="font-family: 'Noto Sans TC', sans-serif;">安 京善</p>
-                        Ahn Kyung-sun<br>
-                        1994. 11. 11<br>
-                        <br>
-                        <p><i class="icon-mail-alt"></i>ahnks9411@gmail.com</p>
-                        <p><i class="icon-phone"></i>010 6426 1290</p>
-                        <p><i class="icon-github-circled"></i><a href="https://github.com/ahnks"
-                                target="_blank">https://github.com/ahnks</a></p>
-                        <br>
-                        <span>LICENSE</span><br>
-                        컴퓨터 활용능력 1급<br>
-                        GTQ 1급 <br>
+        <div class="section" id="about">
+            <div class="title">
+                <h3>
+                    신입 웹 디자이너 안경선을 소개합니다.
+                </h3>About Me
+            </div><!-- title -->
+            <div class="profile">
+                <div class="prof_img">
+                    <img src="img/profile.png" alt="profile" class="prof_img">
+                </div><!-- prof_img -->
+                <div class="prof_text">
+                    <span style="font-size: 1.5rem;">안 경선</span>
+                    <p style="font-family: 'Noto Sans TC', sans-serif;">安 京善</p>
+                    Ahn Kyung-sun<br>
+                    1994. 11. 11<br>
+                    <br>
+                    <p><i class="icon-mail-alt"></i>ahnks9411@gmail.com</p>
+                    <p><i class="icon-phone"></i>010 6426 1290</p>
+                    <p><i class="icon-github-circled"></i><a href="https://github.com/ahnks"
+                            target="_blank">https://github.com/ahnks</a></p>
+                    <br>
+                    <span>LICENSE</span><br>
+                    컴퓨터 활용능력 1급<br>
+                    GTQ 1급 <br>
+                </div><!-- prof_text -->
+                <div class="prof_skill">
+                    <span>SKILL</span>
+                    <div class="skill_container">
+                        <div>
+                            <img src="img/icon_html5.png" alt="html">
+                        </div>
+                        <div>
+                            <img src="img/icon_css3.png" alt="css">
+                        </div>
+                        <div>
+                            <img src="img/icon_js.png" alt="JavaScript">
+                        </div>
+                        <div>
+                            <img src="img/icon_jquery.png" alt="jQuery">
+                        </div>
+                        <div>
+                            <img src="img/icon_ps.png" alt="PhotoShop">
+                        </div>
+                        <div>
+                            <img src="img/icon_ai.png" alt="Illustrator">
+                        </div>
+                        <div>
+                            <img src="img/icon_id.png" alt="InDesign">
+                        </div>
+                        <div>
+                            <img src="img/icon_pr.png" alt="PremierePro">
+                        </div>
+                        <div>
+                            <img src="img/icon_figma.png" alt="Figma">
+                        </div>
+                        <div>
+                            <img src="img/icon_excel.png" alt="Excel">
+                        </div>
+                        <div>
+                            <img src="img/icon_pp.png" alt="PowerPoint">
+                        </div>
 
-                    </div><!-- prof_text -->
-                    <div class="prof_skill">
-                        <span>SKILL</span>
-                        <div class="skill_container">
-                            <div>
-                                <img src="img/icon_html5.png" alt="html">
-                                <p>★★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_css3.png" alt="css">
-                                <p>★★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_js.png" alt="JavaScript">
-                                <p>★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_jquery.png" alt="jquery">
-                                <p>★★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_ps.png" alt="PhotoShop">
-                                <p>★★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_ai.png" alt="Illustrator">
-                                <p>★★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_id.png" alt="InDesign">
-                                <p>★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_pr.png" alt="PremierePro">
-                                <p>★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_excel.png" alt="Excel">
-                                <p>★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_pp.png" alt="PowerPoint">
-                                <p>★★★★</p>
-                            </div>
-                            <div>
-                                <img src="img/icon_figma.png" alt="Figma">
-                                <p>★★★★</p>
-                            </div>
-                        </div><!-- skill_container -->
-                    </div><!-- prof_skill -->
-                </div><!-- profile -->
-            </div><!-- card -->
+                    </div><!-- skill_container -->
+                </div><!-- prof_skill -->
+            </div><!-- profile -->
         </div><!-- section about -->
 
-        <div class="section web" id="sec02">
-            <div class="card">
-                <div class="title">
-                    <h2>웹 디자인</h2>Web Design
-                </div><!-- title -->
-                <div class="design_content">
-                    <img src="img/design_dental.png" alt="design_dental" class="mockup">
-                    <!-- !!!!!!!!!!!반응형 목업도 추가하기 -->
-                    <div class="design_text">
-                        <h4>개인 프로젝트</h4>
-                        <h2>하이치과의원 (반응형)</h2>
-                        <p>가상의 치과 홈페이지입니다.</p>
-                        <span class="tag-html">#HTML</span>
-                        <span class="tag-css">#CSS</span><br>
-                        <span class="tag-ps">#PhotoShop</span>
-                        <span class="tag-ai">#Illustrator</span><br>
-                        <a href="https://github.com/ahnks/dental.github.io.git" target="_blank" class="button"><i
-                                class="icon-github-circled"></i>코드보기</a>
-                        <a href="https://ahnks.github.io/dental.github.io/" target="_blank" class="button"><i
-                                class="icon-home-1"></i>방문하기</a>
-                    </div><!-- design_text -->
-                </div><!-- design_content -->
-            </div><!-- card -->
-        </div><!-- section  web -->
+        <div class="section" id="web">
+            <div class="title">
+                <h3>웹 디자인</h3>Web Design
+            </div><!-- title -->
+            <div class="web_container">
 
-        <div class="section web" id="sec03">
-            <div class="card">
-                <div class="title">
-                    <h2>웹 디자인</h2>Web Design
-                </div><!-- title -->
-                <div class="design_content">
-                    <img src="img/design_cleaning.png" alt="design_cleaning" class="mockup">
-                    <div class="design_text">
-                        <h4>개인 프로젝트</h4>
-                        <h2>세탁나라 (반응형)</h2>
-                        <p>가상의 코인 세탁소 홈페이지입니다. (수정중)</p>
-                        <span class="tag-html">#HTML</span>
-                        <span class="tag-css">#CSS</span>
-                        <span class="tag-js">#JavaScript</span>
-                        <span class="tag-jq">#jQuery</span><br>
-                        <span class="tag-ps">#PhotoShop</span>
-                        <span class="tag-ai">#Illustrator</span><br>
-                        <a href="https://github.com/ahnks/laundry.github.io.git" target="_blank" class="button"><i
-                                class="icon-github-circled"></i>코드보기</a>
-                        <a href="https://ahnks.github.io/laundry.github.io/" target="_blank" class="button"><i
-                                class="icon-home-1"></i>방문하기</a>
+                <div class="mockup">
+                    <img src="img/design_dental.png" alt="치과 사이트 PC 화면">
+                </div>
+                <div class="design_text">
+                    <h4>개인 프로젝트</h4>
+                    <h2>하이치과의원 (반응형)</h2>
+                    <p>가상의 치과 홈페이지입니다.</p>
+                    <span class="tag-html">#HTML</span>
+                    <span class="tag-css">#CSS</span><br>
+                    <span class="tag-ps">#PhotoShop</span>
+                    <span class="tag-ai">#Illustrator</span><br>
+                    <a href="https://github.com/ahnks/dental.github.io.git" target="_blank" class="button"><i
+                            class="icon-github-circled"></i>코드보기</a>
+                    <a href="https://ahnks.github.io/dental.github.io/" target="_blank" class="button"><i
+                            class="icon-home-1"></i>방문하기</a>
+                </div><!-- design_text -->
+                <div class="mockup">
+                    <img src="img/design_festival.png" alt="페스티벌 사이트 PC 화면">
+                </div>
+                <div class="design_text">
+                    <h4>개인 프로젝트</h4>
+                    <h2>빵·과자 페스티벌 (반응형)</h2>
+                    <p>가상의 페스티벌 홈페이지입니다.</p>
+                    <span class="tag-html">#HTML</span>
+                    <span class="tag-css">#CSS</span>
+                    <span class="tag-js">#JavaScript</span>
+                    <span class="tag-jq">#jQuery</span><br>
+                    <span class="tag-ps">#PhotoShop</span>
+                    <span class="tag-ai">#Illustrator</span>
+                    <span class="tag-pr">#Premiere</span><br>
+                    <a href="https://github.com/ahnks/bakery.github.io.git" target="_blank" class="button"><i
+                            class="icon-github-circled"></i>코드보기</a>
+                    <a href="https://ahnks.github.io/bakery.github.io/" target="_blank" class="button"><i
+                            class="icon-home-1"></i>방문하기</a>
+                </div><!-- design_text -->
+                <div class="mockup">
+                    <img src="img/design_cleaning.png" alt="세탁소 사이트 PC 화면">
+                </div>
+                <div class="design_text">
+                    <h4>개인 프로젝트</h4>
+                    <h2>세탁나라 (반응형)</h2>
+                    <p>가상의 코인 세탁소 홈페이지입니다. (수정중)</p>
+                    <span class="tag-html">#HTML</span>
+                    <span class="tag-css">#CSS</span>
+                    <span class="tag-js">#JavaScript</span>
+                    <span class="tag-jq">#jQuery</span><br>
+                    <span class="tag-ps">#PhotoShop</span>
+                    <span class="tag-ai">#Illustrator</span><br>
+                    <a href="https://github.com/ahnks/laundry.github.io.git" target="_blank" class="button"><i
+                            class="icon-github-circled"></i>코드보기</a>
+                    <a href="https://ahnks.github.io/laundry.github.io/" target="_blank" class="button"><i
+                            class="icon-home-1"></i>방문하기</a>
+                </div><!-- design_text -->
+            </div>
 
-                    </div><!-- design_text -->
-                </div><!-- design_content -->
-            </div><!-- card -->
-        </div><!-- section  web -->
 
-        <div class="section web" id="sec04">
-            <div class="card">
-                <div class="title">
-                    <h2>웹 디자인</h2>Web Design
-                </div><!-- title -->
-                <div class="design_content">
-                    <img src="img/design_festival.png" alt="design_festival" class="mockup">
-                    <div class="design_text">
-                        <h4>개인 프로젝트</h4>
-                        <h2>빵·과자 페스티벌 (반응형)</h2>
-                        <p>가상의 페스티벌 홈페이지입니다.</p>
-                        <span class="tag-html">#HTML</span>
-                        <span class="tag-css">#CSS</span>
-                        <span class="tag-js">#JavaScript</span>
-                        <span class="tag-jq">#jQuery</span><br>
-                        <span class="tag-ps">#PhotoShop</span>
-                        <span class="tag-ai">#Illustrator</span>
-                        <span class="tag-pr">#Premiere</span><br>
-                        <a href="https://github.com/ahnks/bakery.github.io.git" target="_blank" class="button"><i
-                                class="icon-github-circled"></i>코드보기</a>
-                        <a href="https://ahnks.github.io/bakery.github.io/" target="_blank" class="button"><i
-                                class="icon-home-1"></i>방문하기</a>
-
-                    </div><!-- design_text -->
-                </div><!-- design_content -->
-            </div><!-- card -->
         </div><!-- section  web -->
 
 
-        <div class="section clone" id="sec05">
-            <div class="card">
-                <div class="title">
-                    <h3>클론 코딩</h3>Clone Coding
-                </div><!-- title -->
-                <div class="container">
-                    <div class="item">
-                        <img src="img/clone_leebh.png" alt="clone_leebh">
-                        <div class="clone_text">
-                            이병헌 팬사이트(반응형)&nbsp;
-                            <a href="https://github.com/ahnks/cl_leebh.github.io.git" target="_blank"><i
-                                    class="icon-github-circled"></i></a>
-                            <a href="https://ahnks.github.io/cl_leebh.github.io/" target="_blank"><i
-                                    class="icon-home-1"></i></a>
-                        </div><!-- clone_text -->
-                    </div><!-- item -->
-                    <div class="item">
-                        <img src="img/clone_daol.png" alt="clone_daol">
-                        <div class="clone_text">
-                            다올&nbsp;
-                            <a href="https://github.com/ahnks/cl_daol.github.io.git" target="_blank"><i
-                                    class="icon-github-circled"></i></a>
-                            <a href="https://ahnks.github.io/cl_daol.github.io/" target="_blank"><i
-                                    class="icon-home-1"></i></a>
-                        </div><!-- clone_text -->
-                    </div><!-- item -->
-                    <div class="item">
-                        <img src="img/clone_indigo.png" alt="clone_indigo">
-                        <div class="clone_text">INDIGO(반응형)&nbsp;
-                            <a href="https://github.com/ahnks/cl_indigo.github.io.git" target="_blank"><i
-                                    class="icon-github-circled"></i></a>
-                            <a href="https://ahnks.github.io/cl_indigo.github.io/" target="_blank"><i
-                                    class="icon-home-1"></i></a>
-                        </div><!-- clone_text -->
-                    </div><!-- item -->
-                    <div class="item">
-                        <img src="img/clone_canon.png" alt="clone_canon">
-                        <div class="clone_text">캐논&nbsp;
-                            <a href="https://github.com/ahnks/cl_canon.github.io.git" target="_blank"><i
-                                    class="icon-github-circled"></i></a>
-                            <a href="https://ahnks.github.io/cl_canon.github.io/" target="_blank"><i
-                                    class="icon-home-1"></i></a>
-                        </div><!-- clone_text -->
-                    </div><!-- item -->
-                    <div class="item">
-                        <img src="img/clone_coffine.png" alt="clone_coffine">
-                        <div class="clone_text">커핀그루나루&nbsp;
-                            <a href="https://github.com/ahnks/cl_coffine.github.io.git" target="_blank"><i
-                                    class="icon-github-circled"></i></a>
-                            <a href="https://ahnks.github.io/cl_coffine.github.io/" target="_blank"><i
-                                    class="icon-home-1"></i></a>
-                        </div><!-- clone_text -->
-                    </div><!-- item -->
-                </div><!-- container -->
-            </div><!-- card -->
+        <div class="section" id="clone">
+            <div class="title">
+                <h3>클론 코딩</h3>Clone Coding
+            </div><!-- title -->
+            <div class="container">
+                <div class="item">
+                    <img src="img/clone_leebh.png" alt="clone_leebh">
+                    <div class="clone_text">
+                        이병헌 팬사이트(반응형)&nbsp;
+                        <a href="https://github.com/ahnks/cl_leebh.github.io.git" target="_blank"><i
+                                class="icon-github-circled"></i></a>
+                        <a href="https://ahnks.github.io/cl_leebh.github.io/" target="_blank"><i
+                                class="icon-home-1"></i></a>
+                    </div><!-- clone_text -->
+                </div><!-- item -->
+                <div class="item">
+                    <img src="img/clone_daol.png" alt="clone_daol">
+                    <div class="clone_text">
+                        다올&nbsp;
+                        <a href="https://github.com/ahnks/cl_daol.github.io.git" target="_blank"><i
+                                class="icon-github-circled"></i></a>
+                        <a href="https://ahnks.github.io/cl_daol.github.io/" target="_blank"><i
+                                class="icon-home-1"></i></a>
+                    </div><!-- clone_text -->
+                </div><!-- item -->
+                <div class="item">
+                    <img src="img/clone_indigo.png" alt="clone_indigo">
+                    <div class="clone_text">INDIGO(반응형)&nbsp;
+                        <a href="https://github.com/ahnks/cl_indigo.github.io.git" target="_blank"><i
+                                class="icon-github-circled"></i></a>
+                        <a href="https://ahnks.github.io/cl_indigo.github.io/" target="_blank"><i
+                                class="icon-home-1"></i></a>
+                    </div><!-- clone_text -->
+                </div><!-- item -->
+                <div class="item">
+                    <img src="img/clone_canon.png" alt="clone_canon">
+                    <div class="clone_text">캐논&nbsp;
+                        <a href="https://github.com/ahnks/cl_canon.github.io.git" target="_blank"><i
+                                class="icon-github-circled"></i></a>
+                        <a href="https://ahnks.github.io/cl_canon.github.io/" target="_blank"><i
+                                class="icon-home-1"></i></a>
+                    </div><!-- clone_text -->
+                </div><!-- item -->
+                <div class="item">
+                    <img src="img/clone_coffine.png" alt="clone_coffine">
+                    <div class="clone_text">커핀그루나루&nbsp;
+                        <a href="https://github.com/ahnks/cl_coffine.github.io.git" target="_blank"><i
+                                class="icon-github-circled"></i></a>
+                        <a href="https://ahnks.github.io/cl_coffine.github.io/" target="_blank"><i
+                                class="icon-home-1"></i></a>
+                    </div><!-- clone_text -->
+                </div><!-- item -->
+            </div><!-- container -->
         </div><!-- section  clone -->
 
-        <div class="section graphic" id="sec06">
-            <div class="card">
-                <div class="title">
-                    <h3>그래픽 디자인</h3>Graphic Design
-                </div><!-- title -->
-                <swiper-container>
-                    <swiper-slide>Slide 1</swiper-slide>
-                    <swiper-slide>Slide 2</swiper-slide>
-                    <swiper-slide>Slide 3</swiper-slide>
-                    <swiper-slide>Slide ...</swiper-slide>
-                    <swiper-button-next></swiper-button-next>
-                    <swiper-button-prev></swiper-button-prev>
-                    <swiper-scrollbar-drag></swiper-scrollbar-drag>
-                </swiper-container>
-            </div><!-- card -->
+        <div class="section" id="graphic">
+            <div class="title">
+                <h3>그래픽 디자인</h3>Graphic Design
+            </div><!-- title -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/graphic_box.png" alt="과자상자 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_card.png" alt="명함 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_detail1.jpg" alt="상세페이지 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_detail2.jpg" alt="상세페이지 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_leaflet.jpg" alt="리플렛 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_mobile.jpg" alt="맥도날드 모바일 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_pop1.jpg" alt="팝아트 디자인"></div>
+                    <div class="swiper-slide"><img src="img/graphic_pop2.jpg" alt="팝아트 디자인"></div>
+                </div><!-- swiper-wrapper -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div><!-- swiper -->
         </div><!-- section  graphic -->
 
-        <div class="section contact" id="sec07">
+        <div class="section" id="contact">
             <div class="title">
                 CONTACT
+                <p>마지막까지 봐주셔서 감사합니다.</p>
+                <p>연락을 주실 경우, <strong style="font-size: 3rem;">010 6426 1290</strong>으로 전화 혹은 문자를 보내주세요.</p>
             </div><!-- title -->
-            <p>마지막까지 봐주셔서 감사합니다.</p>
-            <p>연락을 주실 경우, <strong>010 6426 1290</strong>으로 전화 혹은 문자를 보내주세요.</p>
         </div><!-- section contact -->
 
-    </div><!-- fullpage -->
+    </div><!-- wrap -->
 </body>
 
 </html>

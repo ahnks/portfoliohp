@@ -19,9 +19,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'LINESeedKR-Rg';
-}
 
 ul,
 li {
@@ -31,6 +28,17 @@ li {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+body {
+    font-family: 'LINESeedKR-Rg';
+    background-color: white;
+    background-image: linear-gradient(gainsboro 1px, transparent 1px), linear-gradient(to right, gainsboro 1px, white 1px);
+    background-size: 40px 40px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* tool tag */
@@ -47,7 +55,7 @@ a {
 }
 
 .tag-jq {
-    background-color: pink;
+    background-color: plum;
 }
 
 .tag-ps {
@@ -64,60 +72,48 @@ a {
 
 /* 첫번째 타이틀 */
 
-#sec00 .title .char {}
+
+#intro .title .char {
+    animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+        opacity: 0;
+    }
+}
+
+
+@keyframes flip {}
+
 
 /* 공통사항 */
-/* 격자무늬 배경 */
-.intro,
-.about,
-.clone,
-.graphic,
-.contact {
-    background-color: white;
-    background-image: linear-gradient(gainsboro 1px, transparent 1px), linear-gradient(to right, gainsboro 1px, white 1px);
-    background-size: 40px 40px;
+
+/* 패딩 */
+.section {
+    padding: 5vw;
 }
 
-.intro,
-.contact {
-    padding-left: 3vw;
+#intro,
+#contact {
+    padding: 0 0 0 3vw;
 }
 
-/* 개별 배경색 */
-#sec01 {
-    background-color: gainsboro;
+.section .title {
+    margin-bottom: 5vh;
 }
 
-#sec02 {
-    background-color: rgb(150, 196, 241);
+#intro .title,
+#contact .title {
+    margin-bottom: 0;
 }
 
-#sec03 {
-    background-color: rgb(161, 235, 200);
-}
 
-#sec04 {
-    background-color: rgb(255, 208, 120);
-}
-
-/* card */
-.card {
-    width: 90%;
-    height: 90%;
-    background-color: white;
-    margin: 0 auto;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    padding: 5%;
-    border: 1px solid red;
-}
-
-.web .card,
-.clone .card,
-.graphic .card,
-.contact .card {
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
+#contact p {
+    font-family: 'LINESeedKR-Rg';
+    font-size: 2rem;
 }
 
 /* 타이틀 */
@@ -127,11 +123,7 @@ a {
     line-height: 1.1;
 }
 
-.web .title {
-    color: white;
-}
-
-/* 상단메뉴 */
+/* 상단바 */
 nav {
     position: fixed;
     width: 100vw;
@@ -160,12 +152,17 @@ nav .main li:hover {
 
 /* intro */
 
-.intro {
+#intro,
+#contact {
+    height: 100vh;
     position: relative;
 }
 
-.intro .title,
-.contact .title {
+#intro .title,
+#contact .title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: linear-gradient(45deg, black, transparent);
     background-clip: text;
     -webkit-background-clip: text;
@@ -201,9 +198,9 @@ nav .main li:hover {
 }
 
 .profile {
-    display: flex;
-    justify-content: space-around;
-    align-items: top;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
 }
 
 .profile span {
@@ -227,28 +224,49 @@ nav .main li:hover {
     gap: 30px;
 }
 
-.skill_container p {
-    color: rgb(255, 0, 128);
-    text-align: center;
-}
 
 /* 웹디자인 내용 */
-.design_content {
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
+
+.web_container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 4rem;
+    margin: 0 auto;
 }
 
 .mockup {
-    width: 500px;
+    position: relative;
+}
+
+.mockup::before {
+    position: absolute;
+    content: "●";
+    font-size: 500px;
+    z-index: -1;
+    top: -20%
+}
+
+.mockup:nth-child(1):before {
+    color: rgba(30, 143, 255, 0.5);
+}
+
+.mockup:nth-child(3):before {
+    color: rgba(255, 217, 0, 0.5);
+}
+
+.mockup:nth-child(5):before {
+    color: rgba(0, 255, 128, 0.5);
+}
+
+.mockup img {
+    width: 100%;
 }
 
 .design_text {
-    margin-left: 5vw;
-    width: 500px;
-    padding: 50px;
-    font-size: 1.2rem;
+    height: fit-content;
+    padding: 2rem;
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
@@ -264,12 +282,14 @@ nav .main li:hover {
 .button {
     font-family: 'LINESeedKR-Bd';
     display: inline-block;
-    border: 1px solid;
     text-align: center;
-    padding: 0 15px 0 8px;
     height: 40px;
     line-height: 40px;
     margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding: 0 10px 0 6px;
+    border-radius: 20px;
 }
 
 .button i {
@@ -278,7 +298,31 @@ nav .main li:hover {
 
 .button:hover {
     background-color: dimgray;
-    color: white;
+}
+
+/* 순서 바꾸기 */
+.web_container div:nth-child(1) {
+    order: 1;
+}
+
+.web_container div:nth-child(2) {
+    order: 2;
+}
+
+.web_container div:nth-child(3) {
+    order: 4;
+}
+
+.web_container div:nth-child(4) {
+    order: 3;
+}
+
+.web_container div:nth-child(5) {
+    order: 5;
+}
+
+.web_container div:nth-child(6) {
+    order: 6;
 }
 
 /* 클론코딩 */
@@ -322,12 +366,38 @@ nav .main li:hover {
 }
 
 /* 그래픽 디자인 */
-swiper-container {
+.swiper {
     width: 100%;
-    height: 90%;
-    background-color: pink;
+    height: 80vh;
     border: 1px solid;
+    position: relative;
+
 }
+
+.swiper-wrapper {
+    border: 1px solid green;
+}
+
+.swiper-slide {
+    border: 1px solid red;
+    height: 50vh;
+}
+
+.swiper-slide img {
+    /* width: 100%; */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    z-index: 1;
+}
+
+.swiper-button-prev {}
+
+.swiper-button-next {}
+
+.swiper-scrollbar {}
 
 
 /* 반응형 */
@@ -335,8 +405,8 @@ swiper-container {
 
 @media screen and (max-width:1024px) {
 
-    .intro .title,
-    .contact .title {
+    #intro .title,
+    #contact .title {
         font-size: 4rem;
     }
 
@@ -345,7 +415,8 @@ swiper-container {
     }
 
     .profile {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+
     }
 
     .profile span {
