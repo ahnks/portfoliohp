@@ -87,7 +87,7 @@ a {
     margin-bottom: 5vh;
 }
 
-.B_title{
+.B_title {
     margin-bottom: 0;
 }
 
@@ -139,7 +139,7 @@ nav .main li:hover {
     position: relative;
 }
 
-.B_title{
+.B_title {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -210,7 +210,8 @@ nav .main li:hover {
 /* 자기소개 */
 .prof_img {
     width: 300px;
-    clip-path: circle(50% at 50% 50%);}
+    clip-path: circle(50% at 50% 50%);
+}
 
 .profile {
     display: grid;
@@ -374,9 +375,9 @@ nav .main li:hover {
 
 }
 
-.item:hover .clone_text{
+.item:hover .clone_text {
     opacity: 1;
-    bottom:0;
+    bottom: 0;
 }
 
 .clone_text a {
@@ -388,26 +389,29 @@ nav .main li:hover {
 }
 
 /* 그래픽 디자인 */
-.graphic_container{
+
+
+.swiper {
     width: 100%;
     height: 80vh;
     background-color: gainsboro;
+    position: relative;
 
-}
-.swiper {
-    width: 80%;
-    height: 100%;
-
-    border: 1px solid purple;
 }
 
 .swiper-wrapper {
 }
 
 .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .swiper-slide img {
+    width: 100%;
+    /* height: 100%; */
 }
 
 .swiper-button-prev,
@@ -428,7 +432,7 @@ nav .main li:hover {
 
 @media screen and (max-width:1024px) {
 
-    .B_title{
+    .B_title {
         font-size: 4rem;
     }
 
