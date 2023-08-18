@@ -390,42 +390,17 @@ nav .main li:hover {
 
 /* 그래픽 디자인 */
 
+.masonry_item {
+    width: 33.333%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
-.swiper {
+.masonry_item img {
     width: 100%;
-    height: 80vh;
-    background-color: gainsboro;
-    position: relative;
-
+    display: block;
 }
-
-.swiper-wrapper {
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.swiper-slide img {
-    width: 100%;
-    /* height: 100%; */
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-    position: absolute;
-    z-index: 1;
-}
-
-.swiper-button-prev {}
-
-.swiper-button-next {}
-
-.swiper-scrollbar {}
-
 
 /* 반응형 */
 
